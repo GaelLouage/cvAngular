@@ -1,0 +1,21 @@
+<section class="resume-section" id="projects">
+    <div class="resume-section-content">
+        <h2 class="mb-5">projects</h2>
+    
+        <div class="row" *ngFor="let project of projects">
+          <div class="subheading mb-3">{{project.subheading}}</div>
+        
+          <div class="card m-2" style="width: 18rem;" *ngFor="let proj of project.projects">
+            <a class="d-flex justify-content-center"  [routerLink]="['/project', proj.title]"><img class="project-images" [src]="proj.image" [alt]="proj.title"></a>
+            <div class="card-body text-center">
+              <h5 class="card-title">{{proj.title}}</h5>
+               <a class="social-icon" *ngIf="proj.github.length > 0"  [href]="proj.github" target="_blank"><i class="fab fa-github"></i></a> 
+              <a class="social-icon" [routerLink]="proj.title"><i class="fa fa-file"></i></a>
+
+              <a class="social-icon" *ngIf="proj.site.length > 0"  [href]="proj.site"><i class="fa fa-globe" target="_blank"></i></a>
+            </div>
+          </div>
+
+        </div>
+    </div>
+</section>
