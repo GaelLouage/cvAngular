@@ -7,11 +7,13 @@ import { SkillsComponent } from './skills/skills.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { InterestsComponent } from './interests/interests.component';
 import { ContactComponent } from './contact/contact.component';
+import { EducationComponent } from './education/education.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/About', pathMatch: 'full' },
   { path: 'About', component: AboutComponent },
   { path: 'Experience', component: ExperienceComponent },
+  { path: 'Education', component: EducationComponent },
   { path: 'Skills', component: SkillsComponent },
   { path: 'Projects', component: ProjectsComponent },
   { path: 'Interests', component: InterestsComponent },
