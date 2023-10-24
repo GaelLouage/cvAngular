@@ -17,16 +17,20 @@ export class ProjectsComponent implements OnInit {
  public visibleGameDevProjects:boolean = false;
   public projects:Project[] = [] as Project[];
   public webDevProjects:Project[] = [] as Project[];
- constructor(private projectService:ProjectService){
- 
- }
+
+  public angleRight:string = "fa fa-angle-right";
+  public angleDown:string = "fa fa-angle-down";
+  
+ constructor(private projectService:ProjectService){}
 
   ngOnInit(): void {
    this.projects =  this.projectService.projects;
+
   }
 
   toggleProjects(projectName:string)
   {
+
     switch(projectName){
       case "WebDev":
         this.visibleWebDevProjects = !this.visibleWebDevProjects;
@@ -48,6 +52,7 @@ export class ProjectsComponent implements OnInit {
         this.visibleGameDevProjects = !this.visibleGameDevProjects;
         this.toggleVisibility(false, false, false,false,this.visibleGameDevProjects);
         break;
+      default:
     }
   }
   toggleVisibility(webDev:boolean, api:boolean, wpf:boolean, exercises:boolean, gameDev:boolean){

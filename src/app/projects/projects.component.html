@@ -2,10 +2,18 @@
     <div class="resume-section-content">
         <h2 class="mb-5">projects</h2> 
         <div class="row" *ngFor="let project of getWebDevProjects()">
-          <div class="subheading mb-3"  (click)="toggleProjects('WebDev')" >{{project.subheading}}</div>
-            <div *ngIf="visibleWebDevProjects" class="row">
+          <div class="subheading mb-3  d-flex justify-content-between" (click)="toggleProjects('WebDev')">
+            {{ project.subheading }}
+            <div *ngIf="visibleWebDevProjects">
+              <i class="fa fa-caret-up"></i>
+            </div>
+            <div *ngIf="!visibleWebDevProjects">
+              <i class="fa fa-caret-down"></i>
+            </div>
+          </div>
+          <div *ngIf="visibleWebDevProjects" class="row">
 
- 
+
           <div class="card m-2" style="width: 18rem;" *ngFor="let proj of project.projects" >
             <a class="d-flex justify-content-center"  [routerLink]="['/project', proj.title]"><img class="project-images" [src]="proj.image" [alt]="proj.title"></a>
             <div class="card-body text-center">
@@ -22,9 +30,19 @@
 
         <!-- api projects -->
         <div class="row" *ngFor="let project of getApiProjects()">
-          <div class="subheading mb-3"  (click)="toggleProjects('Api')" >{{project.subheading}}</div>
+          <div class="subheading mb-3 d-flex justify-content-between"  (click)="toggleProjects('Api')" >
+            {{project.subheading}}
+            <div *ngIf="visibleApiProjects">
+              <i class="fa fa-caret-up"></i>
+            </div>
+            <div *ngIf="!visibleApiProjects">
+              <i class="fa fa-caret-down"></i>
+            </div>
+          
+          </div>
+          
             <div *ngIf="visibleApiProjects" class="row">
-    
+             
     
           <div class="card m-2" style="width: 18rem;" *ngFor="let proj of project.projects" >
             <a class="d-flex justify-content-center"  [routerLink]="['/project', proj.title]"><img class="project-images" [src]="proj.image" [alt]="proj.title"></a>
@@ -41,7 +59,15 @@
 
   <!-- wpf / winforms-->
   <div class="row" *ngFor="let project of getWpfProjects()">
-    <div class="subheading mb-3"  (click)="toggleProjects('Wpf')" >{{project.subheading}}</div>
+    <div class="subheading mb-3 d-flex justify-content-between"  (click)="toggleProjects('Wpf')" >
+      {{project.subheading}}
+      <div *ngIf="visibleWpfProjects">
+        <i class="fa fa-caret-up"></i>
+      </div>
+      <div *ngIf="!visibleWpfProjects">
+        <i class="fa fa-caret-down"></i>
+      </div>
+    </div>
       <div *ngIf="visibleWpfProjects" class="row">
 
 
@@ -61,7 +87,15 @@
 
   <!-- Exercises-->
   <div class="row" *ngFor="let project of getExercisesProjects()">
-    <div class="subheading mb-3"  (click)="toggleProjects('Exercises')" >{{project.subheading}}</div>
+    <div class="subheading mb-3 d-flex justify-content-between"  (click)="toggleProjects('Exercises')" >
+      {{project.subheading}}
+      <div *ngIf="visibleExercisesProjects">
+        <i class="fa fa-caret-up"></i>
+      </div>
+      <div *ngIf="!visibleExercisesProjects">
+        <i class="fa fa-caret-down"></i>
+      </div>
+    </div>
       <div *ngIf="visibleExercisesProjects" class="row">
 
 
@@ -81,7 +115,16 @@
 
  <!-- GameDev-->
  <div class="row" *ngFor="let project of getGameDevProjects()">
-  <div class="subheading mb-3"  (click)="toggleProjects('GameDev')" >{{project.subheading}}</div>
+  <div class="subheading mb-3 d-flex justify-content-between"  (click)="toggleProjects('GameDev')" >
+    {{project.subheading}}
+
+    <div *ngIf="visibleGameDevProjects">
+      <i class="fa fa-caret-up"></i>
+    </div>
+    <div *ngIf="!visibleGameDevProjects">
+      <i class="fa fa-caret-down"></i>
+    </div>
+  </div>
     <div *ngIf="visibleGameDevProjects" class="row">
 
 
